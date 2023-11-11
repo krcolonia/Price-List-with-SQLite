@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      app:cardBackgroundColor="@color/black"
+      app:cardElevation="0dp"
+      app:cardMaxElevation="0dp" />
+
+    <TextView
+      android:id="@+id/itemNameTxt"
+      android:layout_width="100dp"
+      android:layout_height="match_parent"
+      android:layout_margin="5dp"
+      android:layout_weight="1"
+      android:fontFamily="@font/traveling_typewriter"
+      android:gravity="center"
+      android:text="@string/headerName"
+      android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      android:layout_weight="0"
+      app:cardBackgroundColor="@color/black"
+      app:cardElevation="0dp"
+      app:cardMaxElevation="0dp" />
+
+    <TextView
+      android:id="@+id/itemPriceTxt"
+      android:layout_width="100dp"
+      android:layout_height="match_parent"
+      android:layout_margin="5dp"
+      android:layout_weight="1"
+      android:fontFamily="@font/traveling_typewriter"
+      android:gravity="center"
+      android:text="@string/headerPrice"
+      android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      android:layout_weight="0"
+      app:cardBackgroundColor="@color/black"
+      app:cardElevation="0dp"
+      app:cardMaxElevation="0dp" />
+
+    <TextView
+      android:id="@+id/itemCatTxt"
+      android:layout_width="100dp"
+      android:layout_height="match_parent"
+      android:layout_margin="5dp"
+      android:layout_weight="1"
+      android:fontFamily="@font/traveling_typewriter"
+      android:gravity="center"
+      android:text="@string/headerCategory"
+      android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      app:cardBackgroundColor="@color/black"
+      app:cardElevation="0dp"
+      app:cardMaxElevation="0dp" />
+  </LinearLayout>
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
+    android:layout_width="0dp"
+    android:layout_height="1dp"
+    app:cardBackgroundColor="@color/black"
+    app:cardElevation="0dp"
+    app:cardMaxElevation="0dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+  <Button
+    android:id="@+id/itemBtn"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:backgroundTint="@color/transparent"
+    android:elevation="0dp"
+    app:cornerRadius="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

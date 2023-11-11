@@ -1,0 +1,36 @@
+<resources>
+  <string name="app_name">Price List with SQLite</string>
+
+  <string name="studNameRec">3BSIT-2 | COLONIA, Kurt Robin P.</string>
+
+  <string name="bgImgDesc">Background Image</string>
+
+  <string name="prodNameHint">Product Name</string>
+  <string name="prodPriceHint">Product Price</string>
+
+  <string name="editDelTitle">Edit / Delete Product</string>
+  <string name="itemIDplaceholder">00</string>
+  <string name="itemIDtitle">Item ID</string>
+
+  <string name="tblProdHead">Product</string>
+  <string name="tblPriceHead">Price</string>
+  <string name="tblCatHead">Category</string>
+
+  <string name="foodCat">Food</string>
+  <string name="drinkCat">Drink</string>
+  <string name="otherCat">Other</string>
+
+  <string name="addText">Add Product</string>
+  <string name="editText">Edit Product</string>
+  <string name="deleteText">Delete Product</string>
+  <string name="returnText">Return to List</string>
+
+  <string name="viewAll">All Products</string>
+  <string name="filterFood">Filter Food</string>
+  <string name="filterDrink">Filter Drink</string>
+  <string name="filterOther">Filter Other</string>
+
+  <string name="headerName">Name</string>
+  <string name="headerPrice">Price</string>
+  <string name="headerCategory">Category</string>
+</resources>
