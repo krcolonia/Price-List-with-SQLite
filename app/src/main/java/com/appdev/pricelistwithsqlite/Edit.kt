@@ -90,19 +90,19 @@ class Edit : AppCompatActivity() {
     try {
       val prodName = editBinding.editNameTxt
       if (prodName.text.isEmpty()) {
-        Toast.makeText(applicationContext, "Product Name is Empty", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Name is Empty", Toast.LENGTH_SHORT).show()
         return
       }
 
       val prodPrice = editBinding.editPriceTxt
       if (prodPrice.text.isEmpty()) {
-        Toast.makeText(applicationContext, "Product Price is Empty", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Price is Empty", Toast.LENGTH_SHORT).show()
         return
       }
 
-      val catOfProd = categoryButtons().toString()
+      val catOfProd = categoryButtons()
       if (catOfProd.isEmpty()) {
-        Toast.makeText(applicationContext, "Product Category is not set", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Category is not set", Toast.LENGTH_SHORT).show()
         return
       }
 
@@ -111,7 +111,7 @@ class Edit : AppCompatActivity() {
       val origPrice = intent.getStringExtra("price")
 
       if(prodName.text.toString() == origName && prodPrice.text.toString() == origPrice && catOfProd == origCat) {
-        Toast.makeText(applicationContext, "Please edit at least 1 value in this product.", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Please edit at least 1 value in this product.", Toast.LENGTH_SHORT).show()
         return
       }
 
@@ -130,13 +130,13 @@ class Edit : AppCompatActivity() {
       statement.bindString(4, idOfProd)
       statement.execute()
 
-      Toast.makeText(applicationContext, "Record Edited Successfully", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Edited Successfully", Toast.LENGTH_SHORT).show()
 
       val viewType = intent.getStringExtra("viewType")
       checkType(viewType)
     }
     catch(e: Exception) {
-      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_SHORT).show()
     }
   }
 
@@ -152,13 +152,13 @@ class Edit : AppCompatActivity() {
       delStatement.bindString(1, idOfProd)
       delStatement.execute()
 
-      Toast.makeText(applicationContext, "Record Deleted!", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Deleted!", Toast.LENGTH_SHORT).show()
 
       val viewType = intent.getStringExtra("viewType")
       checkType(viewType)
     }
     catch(e: Exception) {
-      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_SHORT).show()
     }
   }
 

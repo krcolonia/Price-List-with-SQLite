@@ -48,6 +48,24 @@ class View : AppCompatActivity() {
         editIntent.putExtra("price", prodPrice)
         editIntent.putExtra("cat", prodCat)
 
+        var type = ""
+
+        when(intent.getStringExtra("type")) {
+          "All" -> {
+            type = "All"
+          }
+          "Food" -> {
+            type = "Food"
+          }
+          "Drink" -> {
+            type = "Drink"
+          }
+          "Other" -> {
+            type = "Other"
+          }
+        }
+
+        editIntent.putExtra("viewType", type)
         startActivity(editIntent)
         finish()
       }
@@ -59,29 +77,21 @@ class View : AppCompatActivity() {
   @SuppressLint("SetTextI18n")
   private fun setViewType() {
     val viewTitle = viewBinding.viewTitleTxt
-    val editIntent = Intent(applicationContext, Edit::class.java)
-    var type = ""
 
     when(intent.getStringExtra("type")) {
       "All" -> {
         viewTitle.text = "All Products"
-        type = "All"
       }
       "Food" -> {
         viewTitle.text = "Food Products"
-        type = "Food"
       }
       "Drink" -> {
         viewTitle.text = "Drink Products"
-        type = "Drink"
       }
       "Other" -> {
         viewTitle.text = "Other Products"
-        type = "Other"
       }
     }
-
-    editIntent.putExtra("viewType", type)
   }
 
   private fun assignArrayLists() {
@@ -128,7 +138,7 @@ class View : AppCompatActivity() {
       } while(tmpTable.moveToNext())
     }
     else {
-      Toast.makeText(applicationContext, "List is Empty!", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "List is Empty!", Toast.LENGTH_SHORT).show()
       this.finish()
     }
 

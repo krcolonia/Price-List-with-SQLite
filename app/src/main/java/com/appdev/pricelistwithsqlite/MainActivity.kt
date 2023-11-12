@@ -94,19 +94,19 @@ class MainActivity : AppCompatActivity() {
     try {
       val prodName = mainBinding.prodTxt
       if (prodName.text.isEmpty()) {
-        Toast.makeText(applicationContext, "Product Name is Empty", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Name is Empty", Toast.LENGTH_SHORT).show()
         return
       }
 
       val prodPrice = mainBinding.priceTxt
       if (prodPrice.text.isEmpty()) {
-        Toast.makeText(applicationContext, "Product Price is Empty", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Price is Empty", Toast.LENGTH_SHORT).show()
         return
       }
 
       val catOfProd = categoryButtons()
       if (catOfProd == null) {
-        Toast.makeText(applicationContext, "Product Category is not set", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Product Category is not set", Toast.LENGTH_SHORT).show()
         return
       }
 
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
       statement.bindString(3, catOfProd)
       statement.execute()
 
-      Toast.makeText(applicationContext, "Record Added Successfully", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Added Successfully", Toast.LENGTH_SHORT).show()
 
       prodName.text.clear()
       prodPrice.text.clear()
@@ -138,13 +138,13 @@ class MainActivity : AppCompatActivity() {
       prodName.requestFocus()
     }
     catch(e: Exception) {
-      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_LONG).show()
+      Toast.makeText(applicationContext, "Record Failure", Toast.LENGTH_SHORT).show()
     }
   }
 
   private fun viewProducts(type: String) {
     val typePrint = type.lowercase()
-    Toast.makeText(applicationContext, "Showing $typePrint products...", Toast.LENGTH_LONG).show()
+    Toast.makeText(applicationContext, "Showing $typePrint products...", Toast.LENGTH_SHORT).show()
     val viewIntent = Intent(applicationContext, View::class.java)
     viewIntent.putExtra("type", type)
     startActivity(viewIntent)
