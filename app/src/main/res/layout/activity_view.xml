@@ -72,6 +72,37 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+      android:id="@+id/searchCard"
+      android:layout_width="0dp"
+      android:layout_height="35dp"
+      android:layout_margin="10dp"
+      app:cardCornerRadius="10dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/viewTitleCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+            <SearchView
+              android:id="@+id/productSearch"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:iconifiedByDefault="false"
+              android:queryBackground="@color/transparent"
+              android:queryHint="@string/searchHint"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/cardView3"
       android:layout_width="0dp"
       android:layout_height="1dp"
       android:layout_marginStart="5dp"
@@ -85,11 +116,13 @@
       android:id="@+id/headerLayout"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_margin="5dp"
+      android:layout_marginStart="5dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="5dp"
       android:orientation="horizontal"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/viewTitleCard">
+      app:layout_constraintTop_toBottomOf="@+id/searchCard">
 
         <androidx.cardview.widget.CardView
           android:layout_width="1dp"
@@ -176,6 +209,7 @@
       android:layout_height="0dp"
       android:layout_marginStart="5dp"
       android:layout_marginEnd="5dp"
+      android:layout_marginBottom="5dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"

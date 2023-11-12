@@ -1,5 +1,6 @@
 package com.appdev.pricelistwithsqlite
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,12 @@ class ProductAdapter(private var productList: List<Product>, private val listene
 
   interface OnItemClickListener {
     fun onItemClicked(prodId: String, prodName: String, prodPrice: String, prodCat: String)
+  }
+
+  @SuppressLint("NotifyDataSetChanged")
+  fun setFilteredList(productList: List<Product>) {
+    this.productList = productList
+    notifyDataSetChanged()
   }
 
   override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -34,5 +41,11 @@ class ProductAdapter(private var productList: List<Product>, private val listene
 
   override fun getItemCount(): Int {
     return productList.size
+  }
+
+  @SuppressLint("NotifyDataSetChanged")
+  fun clear() {
+    productList = ArrayList()
+    notifyDataSetChanged()
   }
 }

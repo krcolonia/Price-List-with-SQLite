@@ -5,18 +5,21 @@ import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appdev.pricelistwithsqlite.databinding.ActivityViewBinding
+import java.util.Locale
 
 class View : AppCompatActivity() {
 
   private lateinit var viewBinding: ActivityViewBinding
 
   private lateinit var recyclerView: RecyclerView
+  private lateinit var searchView: SearchView
   private lateinit var adapter: ProductAdapter
 
   private var prodIdList = ArrayList<String>()
@@ -33,11 +36,23 @@ class View : AppCompatActivity() {
     setViewType()
 
     recyclerView = viewBinding.productRecycler
+    searchView = viewBinding.productSearch
 
     recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
     assignArrayLists()
     addDataToList()
+
+    searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+      override fun onQueryTextSubmit(query : String?) : Boolean {
+        return false
+      }
+
+      override fun onQueryTextChange(newText : String?) : Boolean {
+        filterList(newText)
+        return true
+      }
+    })
 
     adapter = ProductAdapter(productItemList, object: ProductAdapter.OnItemClickListener {
       override fun onItemClicked(prodId: String, prodName: String, prodPrice: String, prodCat: String) {
@@ -72,6 +87,24 @@ class View : AppCompatActivity() {
     })
 
     recyclerView.adapter = adapter
+  }
+
+  private fun filterList(query : String?) {
+    if(query != null) {
+      val filteredList = ArrayList<Product>()
+      for (i in productItemList) {
+        if(i.name.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))) {
+          filteredList.add(i)
+        }
+      }
+      if (filteredList.isEmpty()) {
+        adapter.clear()
+        Toast.makeText(this, "No Data Found", Toast.LENGTH_SHORT).show()
+      }
+      else {
+        adapter.setFilteredList(filteredList)
+      }
+    }
   }
 
   @SuppressLint("SetTextI18n")

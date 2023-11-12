@@ -12,6 +12,8 @@
   <string name="itemIDplaceholder">00</string>
   <string name="itemIDtitle">Item ID</string>
 
+  <string name="searchHint">Search Product Name…</string>
+
   <string name="tblProdHead">Product</string>
   <string name="tblPriceHead">Price</string>
   <string name="tblCatHead">Category</string>

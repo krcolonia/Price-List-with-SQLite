@@ -11,7 +11,7 @@ android {
         applicationId = "com.appdev.pricelistwithsqlite"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
+        versionCode = 11
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
